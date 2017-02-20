@@ -2,9 +2,8 @@
   "name": "add-to-calendar",
   "version": "1.0.0",
   "description": "A simple JS library to generate \"add to calendar\" URLs for upcoming events",
-  "main": "build/index.js",
+  "main": "src/addToCal.js",
   "scripts": {
-		"build": "browserify src/addToCal.js > dist/addToCal.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +17,5 @@
   },
   "homepage": "https://github.com/melvey/add-to-calendar#readme",
   "devDependencies": {
-    "browserify": "^14.1.0"
   }
 }
