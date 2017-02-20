@@ -14,5 +14,5 @@ var calculateEndTime = function(event) {
 module.exports = {
 	formatTime: formatTime,
 	calculateEndTime: calculateEndTime,
-	msInMinutes: MS_IN_MINITES
+	msInMinutes: MS_IN_MINUTES
 };
