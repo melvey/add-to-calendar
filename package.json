@@ -4,6 +4,7 @@
   "description": "A simple JS library to generate \"add to calendar\" URLs for upcoming events",
   "main": "build/index.js",
   "scripts": {
+		"build": "browserify src/addToCal.js > dist/addToCal.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
