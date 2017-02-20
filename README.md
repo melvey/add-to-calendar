@@ -1,12 +1,24 @@
-# OuiCal
+# AddToCal
 
-A simple JS library that enables you to add an "add to calendar" button for your upcoming events.
+A simple JS library to generate "add to calendar" URLs for upcoming events. Packaged as a JS module to allow for more versatile usage.
 
-## Inspiration
+## Usage
+Import the module and use the provided functions to generate URLs to add your event to external calendar platforms.
 
-This project was inspired by [Eventbrite's](http://www.eventbrite.com/) add to calendar feature (which should have been open sourced #justSayin).
+Available functions include
 
-## How to use it?
+* getGoogleURL(event)
+* getYahooURL(event)
+* getIcalURI(event)
+
+The event requires the following fields
+
+* title - (string) The event title
+* start - (Date) The event start date
+* duration - (number) The duration of the event in minutes
+* end (optional) - (Date) The end time for the event. This will override the duration if set
+* address - (string) Where the event is occurring
+* description - (string) A more detailed description of the event
 
 Call 'createCalendar' with your event info, pass in any optional parameters such as a class and/ or id and boom! Insert your add-to-calendar div wherever you'd like.
 
@@ -17,55 +29,16 @@ The only fields that are mandatory are:
   - Event duration, in minutes
 
 ## Example
-
-    var myCalendar = createCalendar({
-      options: {
-        class: 'my-class',
-        
-        // You can pass an ID. If you don't, one will be generated for you
-        id: 'my-id'
-      },
-      data: {
-        // Event title
-        title: 'Get on the front page of HN',
-
-        // Event start date
-        start: new Date('June 15, 2013 19:00'),
-        
-        // Event duration (IN MINUTES)
-        duration: 120,
-
-        // You can also choose to set an end time
-        // If an end time is set, this will take precedence over duration
-        end: new Date('June 15, 2013 23:00'),     
-
-        // Event Address
-        address: 'The internet',
-
-        // Event Description
-        description: 'Get on the front page of HN, then prepare for world domination.'
-      }
+    var addToCal = require('./addToCal.js');
+    var googleLink = document.getElementById('addToGoogle');
+    googleLink.setAttribute('href', addToCal.getGoogleURL({
+      title: 'Friday drinks',
+      start: new Date('2017-02-24'),
+      duration: 60,
+      address: 'Breakout room',
+      description: 'Office end of week catch up'
     });
 
-    document.querySelector('#place-where-I-want-this-calendar').appendChild(myCalendar);
-
-[Here is a live example](http://carlsednaoui.github.io/add-to-calendar-buttons/example.html)
-
-## Looking for Instant Gratification?
-[Copy OuiCal into Chrome's JS console](https://raw.github.com/carlsednaoui/ouical/master/ouical.js) (or whatever browser you're using).
-
-
-Then call this:
-
-    document.getElementsByTagName('body')[0].appendChild(createCalendar({data:{title:"this is the title of my event", start: new Date(), duration: 90}}));
-
-\#winning!
-
-## Calendar Generator
-Need to generate an add-to-calendar widget on the fly? No problem, [go here](http://carlsednaoui.github.io/add-to-calendar-buttons/generator/generator.html).
-
-## GitHub Project Page
-[Official Project Page](http://carlsednaoui.github.io/ouical/)
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)

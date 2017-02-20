@@ -1,0 +1,22 @@
+{
+  "name": "add-to-calendar",
+  "version": "1.0.0",
+  "description": "A simple JS library to generate \"add to calendar\" URLs for upcoming events",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melvey/add-to-calendar.git"
+  },
+  "author": "Matt Elvey <matthew.elvey@cdu.edu.au>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/melvey/add-to-calendar/issues"
+  },
+  "homepage": "https://github.com/melvey/add-to-calendar#readme",
+  "devDependencies": {
+    "browserify": "^14.1.0"
+  }
+}
