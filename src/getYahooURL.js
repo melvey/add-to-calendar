@@ -17,7 +17,7 @@ function getYahooURL(event) {
 	var yahooEventDuration = yahooHourDuration + yahooMinuteDuration;
 
 	// Remove timezone from event time
-	var st = formatTime(new Date(event.start - (event.start.getTimezoneOffset() *
+	var st = timeFunctions.formatTime(new Date(event.start - (event.start.getTimezoneOffset() *
 																							timeFunctions.msInMinutes))) || '';
 
 	return  encodeURI([
